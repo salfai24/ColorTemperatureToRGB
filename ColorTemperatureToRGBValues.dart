@@ -21,10 +21,10 @@ class KelvinColorConverter {
 
   List<int> toRGB() {
     // Temperature must fall between 1000 and 40000 degrees
-    // double newTemp = temperature < 1000 ? 1000 : (temperature > 40000 ? 40000 : temperature);
+    double newTemp = temperature < 1000 ? 1000 : (temperature > 40000 ? 40000 : temperature);
 
     // All calculations require tmpKelvin \ 100, so only do the conversion once
-    var percentKelvin = temperature / 100;
+    var percentKelvin = newTemp / 100;
 
     //Calculate each color in turn
     red = clamp(percentKelvin <= 66
